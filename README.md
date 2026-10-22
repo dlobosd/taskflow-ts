@@ -12,6 +12,7 @@ npm start -- list
 npm start -- list pending "entrega"
 npm start -- list done
 npm start -- done 1
+npm start -- stats
 npm test
 ```
 
@@ -30,4 +31,4 @@ Node ejecuta TypeScript directamente, sin comprobación estática de tipos.
 
 Podés filtrar con `all`, `pending` o `done` y agregar un texto de búsqueda. La búsqueda ignora mayúsculas y minúsculas.
 
-Próxima mejora: estadísticas de avance.
+`npm start -- stats` muestra el total, las tareas completadas y pendientes, y el porcentaje de avance redondeado. Una lista vacía muestra 0% y este comando no modifica el archivo de tareas.
