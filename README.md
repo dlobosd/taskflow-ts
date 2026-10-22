@@ -9,6 +9,8 @@ Requiere Node.js 24 o superior. No hace falta instalar paquetes.
 ```sh
 npm start -- add "Preparar entrega"
 npm start -- list
+npm start -- list pending "entrega"
+npm start -- list done
 npm start -- done 1
 npm test
 ```
@@ -26,4 +28,6 @@ Las tareas se guardan en `.taskflow.json` en el directorio actual. La variable d
 Ejecutar un solo proceso a la vez: todavía no hay bloqueo entre procesos concurrentes.
 Node ejecuta TypeScript directamente, sin comprobación estática de tipos.
 
-Próximas mejoras: filtros por estado, búsqueda y estadísticas, en pull requests separados.
+Podés filtrar con `all`, `pending` o `done` y agregar un texto de búsqueda. La búsqueda ignora mayúsculas y minúsculas.
+
+Próxima mejora: estadísticas de avance.
