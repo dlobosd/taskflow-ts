@@ -19,3 +19,12 @@ export function completeTask(tasks: Task[], id: number): Task[] {
   if (!tasks.some(t => t.id === id)) throw new Error('No existe esa tarea.');
   return tasks.map(t => t.id === id ? { ...t, done: true } : t);
 }
+
+export type TaskStatus = 'all' | 'pending' | 'done';
+export function filterTasks(tasks: Task[], status: TaskStatus = 'all', query = ''): Task[] {
+  if (!['all', 'pending', 'done'].includes(status)) throw new Error('Estado inválido.');
+  const search = query.trim().toLocaleLowerCase('es');
+  return tasks.filter(t =>
+    (status === 'all' || t.done === (status === 'done')) &&
+    t.title.toLocaleLowerCase('es').includes(search));
+}
